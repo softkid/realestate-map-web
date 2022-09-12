@@ -25,12 +25,17 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
 Vue.use(PaperDashboard);
+
+
+Vue.prototype.$kakao_appkey = "52cc35f7b4693304e6d92cd631fd7bd6";
+// Vue.prototype.$hostname = "http://realestate-map-api-xdpqd.run.goorm.io/api";
 
 /* eslint-disable no-new */
 new Vue({

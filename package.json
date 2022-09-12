@@ -15,6 +15,7 @@
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "chartist": "^0.11.0",
+    "config.js": "^0.1.0",
     "es6-promise": "^4.2.4",
     "vue": "^2.6.12",
     "vue-clickaway": "^2.1.0",

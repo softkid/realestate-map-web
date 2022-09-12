@@ -46,7 +46,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Happy House"
+      default: "LUCY HOUSE"
     },
     backgroundColor: {
       type: String,

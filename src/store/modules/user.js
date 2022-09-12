@@ -1,4 +1,5 @@
 import axios from "axios";
+const hostname = "http://realestate-map-api-xdpqd.run.goorm.io/api/";
 
 //initial state
 const state = () => ({
@@ -87,7 +88,7 @@ const mutations = {
 const actions = {
   login({ commit }, payload) {
     axios
-      .post("http://localhost/api/member/login", {
+      .post(hostname + "member/login", {
         userid: payload[0],
         userpwd: payload[1]
       })
@@ -100,7 +101,7 @@ const actions = {
   },
   registerMember({ commit }, payload) {
     axios
-      .post("http://localhost/api/member/register", {
+      .post(hostname + "member/register", {
         userid: payload[0],
         userpwd: payload[1],
         username: payload[2],
@@ -116,7 +117,7 @@ const actions = {
   },
   modifyMember({ commit }, payload) {
     axios
-      .put("http://localhost/api/member/modify", {
+      .put(hostname + "member/modify", {
         userid: payload[0],
         userpwd: payload[1],
         username: payload[2],
@@ -132,7 +133,7 @@ const actions = {
   },
   deleteMember({ commit }, payload) {
     axios
-      .post("http://localhost/api/member/delete", {
+      .post(hostname + "member/delete", {
         userid: payload[0],
         userpwd: payload[1],
         username: payload[2],
@@ -148,7 +149,7 @@ const actions = {
   },
   getBookList({ commit }, payload) {
     axios
-      .get("http://localhost/api/member/booklist/" + payload)
+      .get(hostname + "member/booklist/" + payload)
       .then(({ data }) => {
         let books = [];
         for (let i = 0; i < data.length; i++) {
@@ -169,7 +170,7 @@ const actions = {
   },
   addBook({ commit }, payload) {
     axios
-      .post("http://localhost/api/member/newBooking", {
+      .post(hostname + "member/newBooking", {
         userid: payload[0],
         city: payload[1],
         gugun: payload[2],
@@ -185,7 +186,7 @@ const actions = {
   deleteBook({ commit }, payload) {
     commit("deleteBookList", payload);
     axios
-      .post("http://localhost/api/member/deleteBook", {
+      .post(hostname + "member/deleteBook", {
         userid: payload[0],
         no: payload[1]
       })

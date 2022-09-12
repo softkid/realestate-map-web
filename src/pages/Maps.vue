@@ -6,7 +6,7 @@
   </card>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState } from "vuex";  
 export default {
   data() {
     return {
@@ -88,7 +88,7 @@ export default {
       const script = document.createElement("script");
       /* global kakao */ script.onload = () => kakao.maps.load(this.initMap);
       script.src =
-        "http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=eb94e0a165fada25939d9bf736b9992f";
+        "http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=" + this.$kakao_appkey;
       document.head.appendChild(script);
     }
   }

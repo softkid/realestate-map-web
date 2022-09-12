@@ -1,6 +1,6 @@
 import axios from "axios";
 import Chartist from "chartist";
-
+const hostname = "http://realestate-map-api-xdpqd.run.goorm.io/api/";
 // initial state
 const state = () => ({
   type: "",
@@ -242,7 +242,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/aptTotal/" + payload[2] + "/" + payload[0]
+        hostname + "house/aptTotal/" + payload[2] + "/" + payload[0]
       )
       .then(({ data }) => {
         commit("setAptTotal", data);
@@ -256,7 +256,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/avgAmount/" + payload[2] + "/" + payload[0]
+        hostname + "house/avgAmount/" + payload[2] + "/" + payload[0]
       )
       .then(data => {
         commit("setAvgAmount", data.data);
@@ -270,7 +270,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/typeTotal/" + payload[2] + "/" + payload[0]
+        hostname + "house/typeTotal/" + payload[2] + "/" + payload[0]
       )
       .then(({ data }) => {
         commit("setTypeTotal", data);
@@ -282,7 +282,7 @@ const actions = {
   },
   commerceTotal({ commit }) {
     axios
-      .get("http://localhost/api/house/commerceTotal")
+      .get(hostname + "house/commerceTotal")
       .then(({ data }) => {
         commit("setCommerceTotal", data);
       })
@@ -294,7 +294,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/commerceDong/" +
+        hostname + "house/commerceDong/" +
           payload[2] +
           "/" +
           payload[0]
@@ -315,7 +315,7 @@ const actions = {
   },
   priceTotal({ commit }) {
     axios
-      .get("http://localhost/api/house/priceTotal")
+      .get(hostname + "house/priceTotal")
       .then(({ data }) => {
         let prices = [];
         var max = 0;
@@ -333,7 +333,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/priceGugun/" +
+        hostname + "house/priceGugun/" +
           payload[2] +
           "/" +
           payload[1] +
@@ -358,7 +358,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/priceDong/" +
+        hostname + "house/priceDong/" +
           payload[2] +
           "/" +
           payload[1] +
@@ -386,7 +386,7 @@ const actions = {
   },
   monthlyTotal({ commit }) {
     axios
-      .get("http://localhost/api/house/monthlyTotal")
+      .get(hostname + "house/monthlyTotal")
       .then(({ data }) => {
         let amounts = [];
         var max = 0;
@@ -404,7 +404,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/monthly/" + payload[2] + "/" + payload[0]
+        hostname + "house/monthly/" + payload[2] + "/" + payload[0]
       )
       .then(({ data }) => {
         let amounts = [];

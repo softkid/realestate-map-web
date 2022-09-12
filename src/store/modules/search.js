@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const hostname = "http://realestate-map-api-xdpqd.run.goorm.io/api/";
 // initial state
 const state = () => ({
   maxDong: "",
@@ -75,17 +75,17 @@ const mutations = {
 const actions = {
   getCitys({ commit }) {
     axios
-      .get("http://localhost/api/addr/getCity")
+      .get( hostname + "addr/getCity")
       .then(({ data }) => {
         commit("getCitySuccess", data);
       })
       .catch(() => {
-        console.log("getCity Fail");
+        console.log("getCity Fail" + hostname);
       });
   },
   getGuguns({ commit }, payload) {
     axios
-      .get("http://localhost/api/addr/getGugun/" + payload)
+      .get(hostname + "addr/getGugun/" + payload)
       .then(({ data }) => {
         commit("getGugunSuccess", data);
       })
@@ -95,7 +95,7 @@ const actions = {
   },
   getDongs({ commit }, payload) {
     axios
-      .post("http://localhost/api/addr/getDong", {
+      .post(hostname + "addr/getDong", {
         city: payload[0],
         gugun: payload[1]
       })
@@ -113,7 +113,7 @@ const actions = {
     }
     commit("setApt", payload);
     axios
-      .get("http://localhost/api/house/aptSearch/" + payload)
+      .get(hostname + "house/aptSearch/" + payload)
       .then(({ data }) => {
         let apts = [];
 
@@ -151,7 +151,7 @@ const actions = {
     }
     commit("setArea", payload);
     axios
-      .post("http://localhost/api/house/dongSearch", {
+      .post(hostname + "house/dongSearch", {
         city: payload[0],
         gugun: payload[1],
         dong: payload[2]
@@ -187,7 +187,7 @@ const actions = {
       return;
     }
     axios
-      .get("http://localhost/api/addr/getLatLng/" + payload)
+      .get(hostname + "addr/getLatLng/" + payload)
       .then(({ data }) => {
         commit("setLatLng", data);
       })
@@ -197,7 +197,7 @@ const actions = {
   },
   getMaxArea({ commit }, payload) {
     axios
-      .get("http://localhost/api/addr/getMaxArea/" + payload)
+      .get(hostname + "addr/getMaxArea/" + payload)
       .then(({ data }) => {
         commit("setMaxArea", data);
       })

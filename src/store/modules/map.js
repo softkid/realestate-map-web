@@ -1,4 +1,5 @@
 import axios from "axios";
+const hostname = "http://realestate-map-api-xdpqd.run.goorm.io/api/";
 
 // initial state
 const state = () => ({
@@ -63,7 +64,7 @@ const actions = {
     if (payload[2] == "dong") payload[0] = payload[1];
     axios
       .get(
-        "http://localhost/api/house/makeMark/" + payload[2] + "/" + payload[0]
+        hostname + "house/makeMark/" + payload[2] + "/" + payload[0]
       )
       .then(({ data }) => {
         commit("setMarks", data);
