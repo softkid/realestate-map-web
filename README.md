@@ -1,4 +1,4 @@
-# happyhouse_vue
+# lucy realestate map 
 
 ## Project setup
 ```
